@@ -1,0 +1,103 @@
+@import "../../../scss/import.scss";
+.contact {
+  padding-top: 72px;
+  padding-bottom: 36px;
+  h1 {
+    color: $white-cl;
+    font-size: $size-title;
+    margin-bottom: 32px;
+  }
+  hr {
+    background-color: $orange-cl;
+    height: 5px;
+    border: 0;
+    margin-bottom: 42px;
+    transform-origin: left;
+  }
+  .content {
+    display: flex;
+    gap: 144px;
+    margin-bottom: 80px;
+    &-left {
+      width: 50%;
+      &-desc {
+        font-size: 16px;
+        color: $white-cl;
+        line-height: 32px;
+      }
+      &-form {
+        margin-top: 24px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 24px;
+        button {
+          width: 184px;
+          height: 60px;
+          padding: 16px 24px;
+          background-color: $orange-cl;
+          border-radius: 8px;
+          border: 0;
+          cursor: pointer;
+          color: $black-cl;
+          font-size: 16px;
+          font-weight: 700;
+          transition: all 0.3s linear;
+          position: relative;
+          &::after,
+          &::before {
+            content: "";
+            position: absolute;
+            border-radius: inherit;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            opacity: 0.3;
+            background-color: $orange-cl;
+            transition: all 0.3s linear;
+            z-index: -1;
+          }
+          &:hover {
+            transform: translate(-12px, -12px);
+          }
+          &:hover {
+            color: $white-cl;
+          }
+          &:hover::after {
+            transform: translate(6px, 6px);
+          }
+          &:hover::before {
+            transform: translate(12px, 12px);
+          }
+        }
+      }
+    }
+    &-right {
+      width: 50%;
+      iframe {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .infomation {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    h2 {
+      font-weight: 700;
+      font-size: $size-sub;
+      letter-spacing: 0.0015em;
+    }
+    &-item {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      span {
+        color: $white-cl;
+        font-size: $size-normal;
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+@import "../../scss/import.scss";
+.ticket-item {
+  display: flex;
+  &__circle {
+    flex-shrink: 0;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: $white-cl;
+    margin-right: 25px;
+    margin-top: 6px;
+  }
+  &__info {
+    h3 {
+      color: $orange-cl;
+      font-size: $size-sub;
+      margin-bottom: 24px;
+    }
+    .time,
+    .place {
+      color: $gray-light-cl;
+      margin-bottom: 16px;
+      span {
+        font-weight: 700;
+        color: $white-cl;
+      }
+    }
+    .content {
+      color: $gray-light-cl;
+      p {
+        margin-bottom: 8px;
+        line-height: 25px;
+      }
+    }
+    .price {
+      margin-top: 16px;
+      margin-bottom: 30px;
+      @include flexCenter(none);
+      p {
+        margin-left: 12px;
+        color: $orange-cl;
+      }
+    }
+    .button {
+      background-color: $orange-cl;
+      border-radius: 8px;
+      width: 320px;
+      height: 50px;
+      @include flexCenter;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.3s linear;
+      // overflow: hidden;
+      p {
+        color: $black-cl;
+        font-weight: 700;
+        z-index: 1;
+        transition: all 0.3s linear;
+      }
+      &::after,
+      &::before {
+        content: "";
+        position: absolute;
+        border-radius: inherit;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        opacity: 0.3;
+        background-color: $orange-cl;
+        transition: all 0.3s linear;
+        z-index: 0;
+      }
+      &:hover {
+        transform: translate(-12px, -12px);
+      }
+      &:hover p {
+        color: $white-cl;
+      }
+      &:hover::after {
+        transform: translate(6px, 6px);
+      }
+      &:hover::before {
+        transform: translate(12px, 12px);
+      }
+    }
+  }
+}

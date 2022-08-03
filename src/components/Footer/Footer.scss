@@ -1,0 +1,17 @@
+@import "../../scss/import.scss";
+
+.footer {
+  hr {
+    background-color: $gray-cl;
+    transform-origin: left;
+  }
+  &-copyRight {
+    display: flex;
+    gap: 8px;
+    padding-top: 32px;
+    padding-bottom: 80px;
+    span {
+      color: $gray-cl;
+    }
+  }
+}
